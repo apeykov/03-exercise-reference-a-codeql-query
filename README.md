@@ -1,5 +1,18 @@
 # Welcome to the Reference a CodeQL query exercise!
 
+## CodeQL test example
+
+The `codeql-demo` directory contains an intentionally vulnerable browser example:
+it evaluates the `default` URL parameter as JavaScript. **Do not deploy it or
+use it with untrusted input.** CodeQL should report it as
+[`js/code-injection`](https://codeql.github.com/codeql-query-help/javascript/js-code-injection/).
+
+The CodeQL workflow scans JavaScript on pushes to `main`, pull requests targeting
+`main`, or a manual run from the Actions tab. After pushing these changes, check
+the workflow run and the repository's **Security → Code scanning** alerts. Code
+scanning must be enabled for the repository; pull request alerts also depend on
+an available analysis of the target branch.
+
 This exercise checks your knowledge on referencing a query in a CodeQL workflow. It is automatically graded via a workflow once you have completed the instructions.
 
 ## About this exercise
