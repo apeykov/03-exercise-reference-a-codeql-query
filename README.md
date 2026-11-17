@@ -2,10 +2,8 @@
 
 ## CodeQL test example
 
-The `codeql-demo` directory contains an intentionally vulnerable browser example:
-it evaluates the `default` URL parameter as JavaScript. **Do not deploy it or
-use it with untrusted input.** CodeQL should report it as
-[`js/code-injection`](https://codeql.github.com/codeql-query-help/javascript/js-code-injection/).
+The `codeql-demo` directory contains a browser example that displays the
+`default` URL parameter as text without evaluating it as JavaScript.
 
 The CodeQL workflow scans JavaScript on pushes to `main`, pull requests targeting
 `main`, or a manual run from the Actions tab. After pushing these changes, check
