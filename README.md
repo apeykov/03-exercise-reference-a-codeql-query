@@ -13,6 +13,28 @@ the workflow run and the repository's **Security → Code scanning** alerts. Cod
 scanning must be enabled for the repository; pull request alerts also depend on
 an available analysis of the target branch.
 
+## AI Scan test example
+
+`ai-scan-demo/search.php` is an intentionally vulnerable PHP example containing
+SQL injection and cross-site scripting. It is only a scanning fixture: **do not
+deploy it or expose it to untrusted input**. PHP is supported by AI Scan for
+pull requests but is not covered by CodeQL.
+
+1. Enable code scanning and the relevant AI Scan settings for the repository.
+   Availability depends on repository ownership and visibility, and scans can
+   consume Code Security AI credits. See the GitHub documentation for
+   [AI Scan for pull requests](https://docs.github.com/en/code-security/concepts/code-scanning/ai-powered-security-detections)
+   and [AI Scan for repositories](https://docs.github.com/en/code-security/concepts/code-scanning/ai-scan-for-repositories).
+2. Push this new PHP file on a branch in this repository and open a pull request.
+   AI Scan runs on eligible pull requests, not on pull requests from forks or
+   created by Dependabot. Check the pull request for findings marked **AI**.
+3. After the fixture is merged into the default branch, open **Security and
+   quality → Code scanning → AI Scan → Standard scan** to run a repository scan
+   manually. Filter the resulting alerts by **AI Scan**.
+
+AI Scan is independent of the CodeQL workflow. Findings are not guaranteed:
+the repository scan selects files within a time budget and AI results can vary.
+
 This exercise checks your knowledge on referencing a query in a CodeQL workflow. It is automatically graded via a workflow once you have completed the instructions.
 
 ## About this exercise
